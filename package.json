@@ -1,6 +1,6 @@
 {
-  "name": "@mux/upchunk",
-  "version": "2.4.0",
+  "name": "@fsdk/upchunk",
+  "version": "2.4.1",
   "description": "Dead simple chunked file uploads using Fetch",
   "main": "dist/upchunk.js",
   "module": "dist/upchunk.mjs",
@@ -12,8 +12,7 @@
     "default": "./dist/upchunk.js"
   },
   "types": "dist/upchunk.d.ts",
-  "repository": "https://github.com/muxinc/upchunk",
-  "author": "Matthew McClure <m@mux.com>",
+  "repository": "https://github.com/dkashinsky/upchunk",
   "license": "MIT",
   "keywords": [
     "browser upload",
