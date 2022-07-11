@@ -32,6 +32,7 @@ export interface UpChunkOptions {
   chunkSize?: number;
   retries?: number;
   delayBeforeRetry?: number;
+  retryCodes?: number[];
 }
 
 export class UpChunk  {
@@ -42,6 +43,7 @@ export class UpChunk  {
   public chunkSize: number;
   public retries: number;
   public delayBeforeRetry: number;
+  public retryCodes: number[];
 
   private chunk: Blob;
   private chunkCount: number;
@@ -66,6 +68,7 @@ export class UpChunk  {
     this.chunkSize = options.chunkSize || 30720;
     this.retries = options.retries || 5;
     this.delayBeforeRetry = options.delayBeforeRetry || 1;
+    this.retryCodes = options.retryCodes || TEMPORARY_ERROR_CODES;
 
     this.maxFileBytes = (options.maxFileSize || 0) * 1024;
     this.chunkCount = 0;
