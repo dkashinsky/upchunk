@@ -1,9 +1,6 @@
-![UpChunk](banner.png)
+# UpChunk
 
-# UpChunk <img src="https://github.com/muxinc/upchunk/workflows/CI/badge.svg" alt="Build Status">
-
-UpChunk uploads chunks of files! It's a JavaScript module for handling large file uploads via chunking and making a `put` request for each chunk with the correct range request headers. Uploads can be paused and resumed, they're fault tolerant,
-and it should work just about anywhere.
+UpChunk uploads chunks of files! It's a JavaScript module for handling large file uploads via chunking and making a `put` request for each chunk with the correct range request headers. Uploads can be paused and resumed, they're fault tolerant, and it should work just about anywhere.
 
 UpChunk is designed to be used with [Mux](https://mux.com) direct uploads, but should work with any server that supports resumable uploads in the same manner. This library will:
 
@@ -17,19 +14,19 @@ UpChunk is designed to be used with [Mux](https://mux.com) direct uploads, but s
 ### NPM
 
 ```
-npm install --save @mux/upchunk
+npm install --save @fsdk/upchunk
 ```
 
 ### Yarn
 
 ```
-yarn add @mux/upchunk
+yarn add @fsdk/upchunk
 ```
 
 ### Script Tags
 
 ```
-<script src="https://unpkg.com/@mux/upchunk@2"></script>
+<script src="https://unpkg.com/@fsdk/upchunk@2"></script>
 ```
 
 ## Basic Usage
@@ -59,7 +56,7 @@ module.exports = async (req, res) => {
 ### Then, in the browser with plain Javascript
 
 ```javascript
-import * as UpChunk from '@mux/upchunk';
+import * as UpChunk from '@fsdk/upchunk';
 
 // Pretend you have an HTML page with an input like: <input id="picker" type="file" />
 const picker = document.getElementById('picker');
@@ -95,7 +92,7 @@ picker.onchange = () => {
 
 ```javascript
 import React, { useState } from 'react';
-import * as UpChunk from '@mux/upchunk';
+import * as UpChunk from '@fsdk/upchunk';
 
 function Page() {
   const [progress, setProgress] = useState(0);
@@ -255,6 +252,4 @@ delete upload;
 
 ## Credit
 
-The original idea for this came from the awesome [huge uploader](https://github.com/Buzut/huge-uploader) project, which is what you need if you're looking to do multipart form data uploads. 👏
-
-Also, @gabrielginter ported upchunk to [Flutter](https://github.com/gabrielginter/flutter-upchunk).
+Please refer to the original [mux/upchunk](https://github.com/muxinc/upchunk) project. This is a fork and was created to quickly produce and publish npm package with slight changes to use. 👏

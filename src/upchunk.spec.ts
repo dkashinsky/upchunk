@@ -158,7 +158,7 @@ test('a single chunk failing is retried multiple times until successful', (done)
     .twice()
     .reply(200);
 
-  const upload = createUploadFixture({ delayBeforeAttempt: 0.1 });
+  const upload = createUploadFixture({ delayBeforeRetry: 0.1 });
 
   upload.on('attemptFailure', (err) => {
     ATTEMPT_FAILURE_COUNT += 1;
@@ -186,7 +186,7 @@ test('a single chunk failing the max number of times fails the upload', (done) =
     .twice()
     .reply(200);
 
-  const upload = createUploadFixture({ delayBeforeAttempt: 0.1 });
+  const upload = createUploadFixture({ delayBeforeRetry: 0.1 });
 
   upload.on('error', (err) => {
     try {
