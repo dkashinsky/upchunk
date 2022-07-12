@@ -335,7 +335,7 @@ export class UpChunk  {
           const percentProgress = (100 * uploadedBytes) / this.file.size;
 
           this.dispatch('progress', percentProgress);
-        } else if (TEMPORARY_ERROR_CODES.includes(res.statusCode)) {
+        } else if (this.retryCodes.includes(res.statusCode)) {
           if (this.paused || this.offline) {
             return;
           }
