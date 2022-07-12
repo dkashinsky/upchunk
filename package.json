@@ -1,6 +1,6 @@
 {
   "name": "@fsdk/upchunk",
-  "version": "2.4.1",
+  "version": "2.4.2",
   "description": "Dead simple chunked file uploads using Fetch",
   "main": "dist/upchunk.js",
   "module": "dist/upchunk.mjs",
